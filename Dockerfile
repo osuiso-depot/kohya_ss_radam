@@ -134,9 +134,9 @@ CMD ["python3", "kohya_gui.py", "--listen", "0.0.0.0", "--server_port", "7860", 
 
 ARG VERSION
 ARG RELEASE
-LABEL name="bmaltais/kohya_ss" \
-    vendor="bmaltais" \
-    maintainer="bmaltais" \
+LABEL name="osuiso-depot/kohya_ss_radam" \
+    vendor="osuiso-depot" \
+    maintainer="osuiso-depot" \
     # Dockerfile source repository
     url="https://github.com/osuiso-depot/kohya_ss_radam" \
     version=${VERSION} \
