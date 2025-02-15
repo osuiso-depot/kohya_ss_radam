@@ -108,7 +108,7 @@ COPY --link --chown=$UID:0 --chmod=775 --from=build /root/.local /home/$UID/.loc
 COPY --link --chown=$UID:0 --chmod=775 . /app
 
 ENV PATH="/usr/local/cuda/lib:/usr/local/cuda/lib64:/home/$UID/.local/bin:$PATH"
-ENV PYTHONPATH="${PYTHONPATH}:/home/$UID/.local/lib/python3.10/site-packages" 
+ENV PYTHONPATH="${PYTHONPATH}:/home/$UID/.local/lib/python3.10/site-packages"
 ENV LD_LIBRARY_PATH="/usr/local/cuda/lib:/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 ENV LD_PRELOAD=libtcmalloc.so
 ENV PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
@@ -138,7 +138,7 @@ LABEL name="bmaltais/kohya_ss" \
     vendor="bmaltais" \
     maintainer="bmaltais" \
     # Dockerfile source repository
-    url="https://github.com/bmaltais/kohya_ss" \
+    url="https://github.com/osuiso-depot/kohya_ss_radam" \
     version=${VERSION} \
     # This should be a number, incremented with each change
     release=${RELEASE} \

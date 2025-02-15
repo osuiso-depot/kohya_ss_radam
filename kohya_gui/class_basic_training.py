@@ -167,7 +167,7 @@ class BasicTraining:
                 ],
                 value=self.config.get("basic.lr_scheduler", self.lr_scheduler_value),
             )
-            
+
             # Initialize the learning rate scheduler type dropdown
             self.lr_scheduler_type = gr.Dropdown(
                 label="LR Scheduler type",
@@ -179,7 +179,7 @@ class BasicTraining:
                 value=self.config.get("basic.lr_scheduler_type", ""),
                 allow_custom_value=True,
             )
-            
+
             # Initialize the optimizer dropdown
             self.optimizer = gr.Dropdown(
                 label="Optimizer",
@@ -203,6 +203,9 @@ class BasicTraining:
                     "Prodigy",
                     "SGDNesterov",
                     "SGDNesterov8bit",
+                    "RAdamScheduleFree",
+                    "AdamWScheduleFree",
+                    "SGDScheduleFree",
                 ],
                 value=self.config.get("basic.optimizer", "AdamW8bit"),
                 interactive=True,
@@ -296,7 +299,7 @@ class BasicTraining:
                 maximum=100,
                 step=1,
             )
-            
+
             def lr_scheduler_changed(scheduler, value):
                 if scheduler == "constant":
                     self.old_lr_warmup = value
@@ -310,7 +313,7 @@ class BasicTraining:
                     interactive=True
                     info=""
                 return gr.Slider(value=value, interactive=interactive, info=info)
-            
+
             self.lr_scheduler.change(
                 lr_scheduler_changed,
                 inputs=[self.lr_scheduler, self.lr_warmup],
