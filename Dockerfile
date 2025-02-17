@@ -108,7 +108,7 @@ COPY --link --chown=$UID:0 --chmod=775 --from=build /root/.local /home/$UID/.loc
 COPY --link --chown=$UID:0 --chmod=775 . /app
 
 ENV PATH="/usr/local/cuda/lib:/usr/local/cuda/lib64:/home/$UID/.local/bin:$PATH"
-ENV PYTHONPATH="${PYTHONPATH}:/home/$UID/.local/lib/python3.10/site-packages" 
+ENV PYTHONPATH="${PYTHONPATH}:/home/$UID/.local/lib/python3.10/site-packages"
 ENV LD_LIBRARY_PATH="/usr/local/cuda/lib:/usr/local/cuda/lib64:${LD_LIBRARY_PATH}"
 ENV LD_PRELOAD=libtcmalloc.so
 ENV PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
@@ -134,14 +134,14 @@ CMD ["python3", "kohya_gui.py", "--listen", "0.0.0.0", "--server_port", "7860", 
 
 ARG VERSION
 ARG RELEASE
-LABEL name="bmaltais/kohya_ss" \
-    vendor="bmaltais" \
-    maintainer="bmaltais" \
+LABEL name="osuiso-depot/kohya_ss_radam" \
+    vendor="osuiso-depot" \
+    maintainer="osuiso-depot" \
     # Dockerfile source repository
-    url="https://github.com/bmaltais/kohya_ss" \
+    url="https://github.com/osuiso-depot/kohya_ss_radam" \
     version=${VERSION} \
     # This should be a number, incremented with each change
     release=${RELEASE} \
     io.k8s.display-name="kohya_ss" \
     summary="Kohya's GUI: This repository provides a Gradio GUI for Kohya's Stable Diffusion trainers(https://github.com/kohya-ss/sd-scripts)." \
-    description="The GUI allows you to set the training parameters and generate and run the required CLI commands to train the model. This is the docker image for Kohya's GUI. For more information about this tool, please visit the following website: https://github.com/bmaltais/kohya_ss."
+    description="The GUI allows you to set the training parameters and generate and run the required CLI commands to train the model. This is the docker image for Kohya's GUI. For more information about this tool, please visit the following website: https://github.com/osuiso-depot/kohya_ss_radam."

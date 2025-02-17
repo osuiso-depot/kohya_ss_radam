@@ -79,8 +79,8 @@ else
 fi
 
 # Variables
-BRANCH="master"
-GIT_REPO="https://github.com/bmaltais/kohya_ss.git"
+BRANCH="sd3-flux.1"
+GIT_REPO="https://github.com/osuiso-depot/kohya_ss_radam"
 INTERACTIVE=false
 PUBLIC=false
 SKIP_SPACE_CHECK=false
@@ -317,7 +317,7 @@ while getopts ":vb:d:g:inpqrus-:" opt; do
     OPTARG="${OPTARG#$opt}" # extract long option argument (may be empty)
     OPTARG="${OPTARG#=}"    # if long option argument, remove assigning `=`
   fi
-  
+
   case $opt in
   b | branch) BRANCH="$OPTARG" ;;
   d | dir) DIR="$OPTARG" ;;
